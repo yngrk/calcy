@@ -45,8 +45,30 @@ function operate(operator, a, b) {
     }
 }
 
+// check validity of input for printToScreen()
+function isValid(str) {
+    const lcd = lcdBot.textContent;
+
+    // lcd already has decimal
+    if (lcd.includes('.') && str === '.') {
+        return false;
+    }
+
+    // lcd begins with 0
+    if (lcd === '' && str === '0') {
+        return false;
+    }
+
+    return true;
+}
+
 function printToScreen(str) {
-    lcdBot.textContent += `${str}`;
+    if (isValid(str)) {
+        if (lcdBot.textContent.length % 20 == 0) {
+            lcdBot.textContent += '\n';
+        }
+        lcdBot.textContent += `${str}`;
+    }
 }
 
 // add functionality to buttons 1-9:
