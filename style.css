@@ -1,13 +1,35 @@
 body {
     display: flex;
+    justify-content: center;
+    background-color: rgb(107, 107, 107);
 }
 
 .calc-container {
-    background-color: gray;
+    margin-top: 20%;
+    background-color: rgb(131, 131, 131);
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 10px;
     width: 250px;
+    border-radius: 15px;
+    border: 5px solid rgb(202, 202, 202);
+}
+
+.lcd-container {
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: rgb(151, 151, 151);
+    border-radius: 5px;
+    border-bottom: 2px solid rgb(185, 185, 185);
+}
+
+.lcd-history {
+    height: 30%;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+
+.lcd-current {
+    height: 70%;
 }
 
 .row {
@@ -19,4 +41,5 @@ button {
     flex: 1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
+    border-radius: 5px;
 }
