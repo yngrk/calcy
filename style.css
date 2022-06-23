@@ -16,6 +16,8 @@ body {
 }
 
 .lcd-container {
+    display: flex;
+    flex-direction: column;
     height: 100px;
     margin-bottom: 10px;
     background-color: rgb(151, 151, 151);
@@ -24,12 +26,27 @@ body {
 }
 
 .lcd-history {
-    height: 30%;
+    flex: 3;
     border-bottom: 1px solid rgb(107, 107, 107);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    color: rgb(65, 65, 65);
 }
 
 .lcd-current {
-    height: 70%;
+    flex: 7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    color: rgb(65, 65, 65);
 }
 
 .row {
