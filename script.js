@@ -2,6 +2,8 @@
 const numBtn = document.querySelectorAll('.num');
 const lcdTop = document.querySelector('.lcd-history');
 const lcdBot = document.querySelector('.lcd-current');
+const ACBtn = document.querySelector('.ac');
+const DelBtn = document.querySelector('.del');
 
 
 // OPERATIONS
@@ -55,9 +57,11 @@ function isValid(str) {
     }
 
     // lcd begins with 0
-    if (lcd === '' && str === '0') {
+    if (lcd.length == 0 && str === '0') {
         return false;
     }
+
+    // negative symbol only as first character
 
     return true;
 }
@@ -71,10 +75,30 @@ function printToScreen(str) {
     }
 }
 
+function clear() {
+    // clears all displays
+    lcdBot.textContent = '';
+}
+
+function del() {
+    // removes last input from lcd
+    let lcd = lcdBot.textContent;
+    if (lcd.length > 0) {
+        lcdBot.textContent = lcd.substring(0, lcd.length - 1);
+    }
+}
+
+// AC Button
+ACBtn.addEventListener('click', clear);
+
+// DEL Button
+DelBtn.addEventListener('click', del);
+
 // add functionality to buttons 1-9:
 // populate display when buttons pressed
-// store the number in a variable when number ends
-// (e.g. when operation button pressed)
 numBtn.forEach(btn => btn.addEventListener('click', function() {
     printToScreen(btn.textContent);
 }));
+
+// store the number in a variable when number ends
+// (e.g. when operation button pressed)
