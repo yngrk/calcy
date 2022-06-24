@@ -8,6 +8,7 @@ const ACBtn = document.querySelector('.ac');
 const DelBtn = document.querySelector('.del');
 const opBtn = document.querySelectorAll('.op');
 const enterBtn = document.querySelector('.enter');
+const negBtn = document.querySelector('.negative');
 
 // Variables
 let currentOperation = '';
@@ -189,4 +190,14 @@ enterBtn.addEventListener('click', function() {
 
     // clear operation num 
     lcdOpNum.textContent = '';
+});
+
+// Negative Button
+negBtn.addEventListener('click', function() {
+    if (lcdCalc.textContent.length == 0) {
+        return;
+    }
+    
+    const num = Number(lcdCalc.textContent);
+    lcdCalc.textContent = num * (-1);
 });
