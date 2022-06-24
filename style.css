@@ -25,21 +25,37 @@ body {
     border-bottom: 2px solid rgb(185, 185, 185);
 }
 
-.lcd-history {
-    flex: 3;
-    border-bottom: 1px solid rgb(107, 107, 107);
+.lcd-operation {
+    flex: 1;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    
+}
+
+.lcd-op-num {
+    flex: 8;
     padding: 5px 10px;
+    font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
-    color: rgb(65, 65, 65);
+    display: flex;
+    overflow: hidden;
+    color: rgb(105, 105, 105);
+}
+
+.lcd-op-op {
+    flex: 2;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    justify-content: flex-end;
+    display: flex;
+    overflow: hidden;
+    color: rgb(105, 105, 105);
 }
 
 .lcd-current {
-    flex: 7;
-    outline: 1px solid black;
+    flex: 3;
     padding: 5px 10px;
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
